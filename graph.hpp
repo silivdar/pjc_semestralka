@@ -28,6 +28,16 @@ struct Component {
     int parent, rank; //rodic a stupen
 };
 
+struct Graph* buildGraph(int V, int E){
+    
+    Graph* g = new Graph;
+    g->V = V;
+    g->E = E;
+    g->edge = new Edge[E];
+    
+    return g;
+}
+
 int findComp(struct Component components[], int k);
 
 void unionComp(struct Component components[], int n, int m);
