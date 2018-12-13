@@ -16,3 +16,18 @@ int findComp(struct Component components[], int k){
     
     return components[k].parent;
 }
+
+void unionComp(struct Component components[], int n, int m){
+    
+    int nroot = findComp(components, n);
+    int mroot = findComp(components, m);
+    
+    if(components[nroot].rank < components[mroot].rank){
+        components[nroot].parent = mroot;
+    }else if(components[nroot].rank > components[mroot].rank){
+        components[mroot].parent = nroot;
+    }else{
+        components[mroot].parent = nroot;
+        components[nroot].rank++;
+    }
+}

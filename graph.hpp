@@ -30,6 +30,6 @@ struct Component {
 
 int findComp(struct Component components[], int k);
 
-int unionComp(struct Component components[], int n, int m);
+void unionComp(struct Component components[], int n, int m);
 
 #endif /* graph_hpp */
