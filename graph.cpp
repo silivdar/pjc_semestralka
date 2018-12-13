@@ -7,3 +7,12 @@
 //
 
 #include "graph.hpp"
+
+int findComp(struct Component components[], int k){
+    
+    if(components[k].parent != k){
+        components[k].parent = findComp(components, components[k].parent);
+    }
+    
+    return components[k].parent;
+}
